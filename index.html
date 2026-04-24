@@ -1199,7 +1199,7 @@
                 </div>
             </div>
 
-            <form class="contact-form" action="https://formspree.io/f/mzdyopaz" method="POST"> 
+           <form class="contact-form" action="https://formspree.io/f/mzdyopaz" method="POST" onsubmit="handleSubmit(event)">
                 
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_subject" value="New enquiry from website"> 
@@ -1305,6 +1305,23 @@
             navLinks.style.padding = '20px';
             navLinks.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
         }
+        function handleSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(() => {
+        window.location.href = "thanks.html";
+    }).catch(() => {
+        alert("Something went wrong. Try again.");
+    });
+}
     </script>
 
 </body>
