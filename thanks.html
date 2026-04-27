@@ -1,11 +1,175 @@
-<!DOCTYPE html>
-<html>
+
+thanks_html = '''<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Thank You</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Chérie Moments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A96E;
+            --gold-light: #E8D5B5;
+            --dark: #8B1A1A;
+            --darker: #5C0F0F;
+            --light: #f8f6f3;
+            --text: #333;
+            --text-light: #777;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text);
+            background: var(--light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thanks-container {
+            text-align: center;
+            padding: 60px 40px;
+            max-width: 600px;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .thanks-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid var(--gold-light);
+            pointer-events: none;
+        }
+
+        .icon-check {
+            width: 80px;
+            height: 80px;
+            background: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--gold);
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 25px auto;
+        }
+
+        .message {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .contact-info {
+            background: var(--light);
+            padding: 25px;
+            margin-bottom: 35px;
+        }
+
+        .contact-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--dark);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .logo-bottom {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .thanks-container {
+                margin: 20px;
+                padding: 40px 25px;
+            }
+            h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
-<body style="font-family: Arial; text-align:center; padding-top:100px;">
-    <h1>Thank you!</h1>
-    <p>Your message has been sent successfully.</p>
-    <a href="https://cheriemoments.ie">Go back to homepage</a>
+<body>
+    <div class="thanks-container">
+        <div class="icon-check">✓</div>
+        <h1>Thank You!</h1>
+        <p class="subtitle">Your message has been sent successfully.</p>
+        <div class="divider"></div>
+        <p class="message">
+            We appreciate you taking the time to reach out to us. 
+            We have received your enquiry and will get back to you within 24 hours.
+        </p>
+        <div class="contact-info">
+            <p>Need immediate assistance?</p>
+            <p>Call us: <a href="tel:+353833636735">+353 83 363 67 65</a></p>
+            <p>Email: <a href="mailto:contact@cheriemoments.ie">contact@cheriemoments.ie</a></p>
+        </div>
+        <a href="https://cheriemoments.ie" class="btn">Back to Homepage</a>
+        <p class="logo-bottom">Chérie Moments</p>
+    </div>
 </body>
-</html>
+</html>'''
+
+with open('/mnt/agents/output/thanks.html', 'w', encoding='utf-8') as f:
+    f.write(thanks_html)
+
+print(f"thanks.html salvat: {len(thanks_html)} caractere")
